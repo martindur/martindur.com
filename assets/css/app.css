@@ -1,0 +1,24 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+@supports (font-variation-settings: normal) {
+  @font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../fonts/OpenSans/OpenSans-VariableFont_wdth,wght.ttf")
+      format("ttf");
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../fonts/OpenSans/OpenSans-Italic-VariableFont_wdth,wght.ttf")
+      format("ttf");
+  }
+}
