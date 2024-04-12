@@ -1,9 +1,52 @@
 <.flash_group flash={@flash} />
-<div class="relative px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-28 xl:py-0">
+<div class="relative px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-0 xl:py-0">
   <div class="grid grid-cols-1 items-center">
-    <div :for={project <- @projects} class="flex justify-stretch group odd:flex-row-reverse">
-      <div class="w-full group-even:border-r p-8 py-24"><% project.name %></div>
-      <div class="w-full group-odd:border-r p-8 py-24"><span class="invisible">invis</span></div>
-    </div>
+    <a
+      :for={project <- @projects}
+      href={project.url}
+      target="_blank"
+      class="group/link flex justify-stretch group even:flex-row-reverse"
+    >
+      <div class="relative w-full group-odd:border-r-2 py-10 flex items-center group-even:justify-end">
+        <.icon
+          name="hero-chevron-up"
+          class="invisible group-first:visible h-8 w-8 text-gray-300 absolute -top-8 -right-[17px]"
+        />
+        <div class="absolute bottom-1/2 group-even:left-0 group-odd:right-0 border-b w-16">
+          <span class="invisible">invis</span>
+        </div>
+        <div class="relative flex w-full h-40 flex-col p-1 px-2 justify-between rounded
+          group-even:items-end group-even:text-end group-even:border-r-2
+          group-odd:border-l-2
+          group-hover/link:shadow-md transition-all duration-100 ease-in-out">
+          <div class="flex flex-col">
+            <h1 class="group-hover/link:tracking-widest font-medium text-lg tracking-wider transition-all duration-100 ease-in-out">
+              <%= project.name %>
+            </h1>
+            <p class="text-sm text-slate-600"><%= project.description %></p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <div
+              :for={point <- project.points}
+              class="relative flex text-sm group-even:justify-end"
+            >
+              <div class="border-b absolute group-odd:-left-2 group-even:-right-2 bottom-1/2 w-3">
+                <span class="invisible">.</span>
+              </div>
+              <p class="px-3"><%= point %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full group-even:border-r-2 py-10 flex items-center justify-center">
+        <div class="rounded-full border shadow-md w-36 h-36 overflow-hidden">
+          <img
+            src={project.img}
+            class="w-full h-full object-cover object-center opacity-10 group-hover/link:opacity-100 transition-all duration-100 ease-in-out"
+            draggable="false"
+          />
+        </div>
+      </div>
+    </a>
   </div>
 </div>

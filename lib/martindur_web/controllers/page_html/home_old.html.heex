@@ -1,0 +1,22 @@
+<.flash_group flash={@flash} />
+<div class="relative px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-0 xl:py-0">
+  <div class="grid grid-cols-1 items-center">
+    <div :for={project <- @projects} class="flex justify-stretch group even:flex-row-reverse">
+      <div class="relative w-full group-odd:border-r py-24 flex items-center group-even:justify-end">
+        <div class="absolute bottom-1/2 group-even:left-0 group-odd:right-0 border-b w-8">
+          <span class="invisible">invis</span>
+        </div>
+        <div class="relative flex flex-col items-center rounded border shadow w-72 h-40">
+          <div class="flex items-center justify-center absolute top-0 w-full h-24 rounded backdrop-blur-sm bg-white/40">
+            <h2 class="text-lg font-medium tracking-wide"><%= project.name %></h2>
+          </div>
+          <div class="overflow-hidden rounded-t h-24 border-b">
+            <img src={project.img} class="object-scale-down object-top" />
+          </div>
+          <div class="flex flex-col"></div>
+        </div>
+      </div>
+      <div class="w-full group-even:border-r py-24"><span class="invisible">invis</span></div>
+    </div>
+  </div>
+</div>
