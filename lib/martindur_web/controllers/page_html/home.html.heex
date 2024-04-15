@@ -8,12 +8,12 @@
       target="_blank"
       class="group/link flex justify-stretch group even:flex-row-reverse"
     >
-      <div class="relative w-full group-odd:border-r-2 py-10 flex items-center group-even:justify-end">
+      <div class="relative w-full sm:group-odd:border-r-2 py-10 flex items-center group-even:justify-end">
         <.icon
           name="hero-chevron-up"
-          class="invisible group-first:visible h-8 w-8 text-gray-300 absolute -top-8 -right-[17px]"
+          class="invisible sm:group-first:visible h-8 w-8 text-gray-300 absolute -top-8 -right-[17px]"
         />
-        <div class="absolute bottom-1/2 group-even:left-0 group-odd:right-0 border-b w-16">
+        <div class="invisible sm:visible absolute bottom-1/2 group-even:left-0 group-odd:right-0 border-b w-16">
           <span class="invisible">invis</span>
         </div>
         <div class="relative flex w-full h-40 flex-col p-1 px-2 justify-between rounded
@@ -39,11 +39,11 @@
           </div>
         </div>
       </div>
-      <div class="w-full group-even:border-r-2 py-10 flex items-center justify-center">
-        <div class="rounded-full border shadow-md w-36 h-36 overflow-hidden">
+      <div class="sm:w-full sm:group-even:border-r-2 py-10 flex items-center sm:justify-center">
+        <div class="rounded-full border shadow-md w-20 h-20 sm:w-36 sm:h-36 overflow-hidden">
           <img
             src={project.img}
-            class="w-full h-full object-cover object-center opacity-40 group-hover/link:opacity-100 transition-all duration-100 ease-in-out"
+            class="w-full h-full object-cover object-center opacity-80 sm:opacity-40 group-hover/link:opacity-100 transition-all duration-100 ease-in-out"
             draggable="false"
           />
         </div>
